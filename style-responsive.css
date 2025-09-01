@@ -47,12 +47,22 @@
         max-width: none;
         min-width: none;  
     }
+    .show-two-thirds .rail,
+    .show-two-thirds .sidebar,
+    .show-two-thirds .one-third,
+    .show-two-thirds .notes-header,
+    .show-two-thirds .page {
+        display: none !important;
+    }
+    .show-two-thirds .two-thirds {
+        display: block !important;
+    }
+
+    #close-two-thirds-btn {
+        display: inline-block !important;
+    }
 }
 
 /* ENDING TABLET SIZE*/
 
 /* STARTING PC SIZE */
-
-@media(min-width:1024) {
-
-}

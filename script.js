@@ -35,6 +35,48 @@ document.querySelectorAll('.note-item').forEach(item => {
     });
 });
 
+/* ADD NOTE TO NOTES LIST */
+
+document.getElementById('add-notes-btn').addEventListener('click', function() {
+    const noteHTML = `
+    <div class="note-item">
+        <div class="note-content">
+            <div class="note-title" title="New Note" contenteditable="true">INSERT TEXT</div>
+            <div class="note-subtitle" title="New Subtitle" contenteditable="true">INSERT TEXT</div>
+            <div class="note-meta">
+                <span class="meta-link">
+                    <i class="bi bi-link-45deg meta-icon"></i>
+                    <span contenteditable="true">3</span>
+                </span>
+                <span class="meta-label label-project"><i class="bi bi-tag-fill"></i><span contenteditable="true">Project</span></span>
+            </div>
+            <div class="note-footer">
+                <span class="note-time" contenteditable="true">10:43 AM</span>
+                <div class="-footer-divider"></div>
+                <span class="note-notebook">
+                    <i class="bi bi-journal"></i>
+                    <span contenteditable="true">NoteBook-01</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    `;
+    const btn = document.getElementById('add-notes-btn');
+    btn.insertAdjacentHTML('beforebegin', noteHTML);
+});
+
+document.querySelectorAll('.note-item').forEach(function(note){
+    note.addEventListener('click', function(){
+        if(window.innerWidth <= 1024){
+            document.body.classList.add('show-two-thirds');
+        }
+    });
+});
+
+document.getElementById('close-two-thirds-btn').addEventListener('click', function() {
+    document.body.classList.remove('show-two-thirds');
+});
+
 /* TASKS FUNCTIONS */
 
 function initTaskListeners() {
