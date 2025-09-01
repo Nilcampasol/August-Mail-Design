@@ -14,21 +14,20 @@
     --shadow: 0 1px 2px rgba(0, 0, 0, .06), 0 8px 24px rgba(0, 0, 0, .06);
     --radius: 12px;
     --radius-sm: 6px;
+    --rail-width: 64px;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
     margin: 0;
     margin-top: 1px;
     padding: 0;
     overflow: hidden;
+    border: 1px solid var(--line);
 }
 
 body {
     display: flex;
-    width: 100%;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
@@ -155,7 +154,7 @@ body {
 }
 
 .header {
-    width: 100%;
+    width: calc(100% - 64px);
 }
 
 .page {
@@ -177,7 +176,8 @@ body {
     gap: 12px;
     padding: 8px 30px 8px 20px;
     margin-right: auto;
-    width: 0%;
+    width: 100%;
+
 }
 
 .search .bi-search {
@@ -214,13 +214,11 @@ body {
     display: grid;
     place-items: center;
     font-weight: 700;
-    letter-spacing: .3px;
     margin-left: 10px;
 }
 
 .avatar--with-badge {
     position: relative;
-    display: inline-grid;
     width: 38px;
     height: 38px;
 }
@@ -334,7 +332,6 @@ body {
     font-size: 15px;
     cursor: pointer;
     transition: background 0.12s;
-    white-space: nowrap;
     position: relative;
     padding-left: 10px;
 }
@@ -418,6 +415,7 @@ body {
 
 .main-content2 {
     display: flex;
+    flex-grow: 1;
     flex: 1;
     height: 100%;
 }
@@ -434,6 +432,7 @@ body {
     max-width: 460px;
     min-width: 360px;
     padding-bottom: 40px;
+    flex-shrink: 1;
 }
 
 .main-content2,
@@ -441,6 +440,7 @@ body {
 .two-thirds {
     max-height: calc(100vh - 56px);
     min-height: 0;
+    display:flex;
 }
 
 .one-third.test-bg1 {
@@ -618,17 +618,21 @@ body {
 .note-title {
     font-weight: bold;
     font-size: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .note-subtitle {
     color: var(--muted);
     font-size: 16px;
-    white-space: nowrap;
+}
+
+/* TRUNCATE */
+
+.note-title, .note-subtitle{
     overflow: hidden;
     text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .note-meta {
@@ -638,7 +642,6 @@ body {
     flex-wrap: nowrap;
     overflow: hidden;
     min-width: 0;
-    white-space: nowrap;
 }
 
 .meta-icon,
@@ -746,13 +749,6 @@ body {
     color: var(--blue);
 }
 
-@media (max-width: 1200px) {
-    .two-thirds.test-bg2 {
-        display: none;
-    }
-}
-
-
 /* --- CONTAINER 2/3 --- */
 .two-thirds {
     flex: 2;
@@ -784,7 +780,7 @@ body {
 
 }
 
-.toolbar-main .toolbar-btn {
+.toolbar-btn {
     color: var(--muted);
     background: none;
     border: none;
@@ -862,8 +858,6 @@ body {
     cursor: pointer;
     padding: 6px 18px;
     transition: background 0.15s;
-    white-space: nowrap;
-
 }
 
 .people-btn i {
@@ -1269,7 +1263,6 @@ body {
 
 .editor-images {
     margin-top: 90px;
-    display: block;
     width: 100%;
 }
 
@@ -1279,7 +1272,6 @@ body {
     height: auto;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
-    display: block;
     object-fit: cover;
 }
 

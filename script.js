@@ -28,16 +28,14 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 
 /* NOTES LIST */
 
-document.querySelectorAll('.sidebar-list li').forEach(item => {
+document.querySelectorAll('.note-item').forEach(item => {
     item.addEventListener('click', function () {
-        document.querySelectorAll('.sidebar-list li.active').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.note-item.active').forEach(el => el.classList.remove('active'));
         this.classList.add('active');
     });
 });
 
 /* TASKS FUNCTIONS */
-
-
 
 function initTaskListeners() {
     // Activate task

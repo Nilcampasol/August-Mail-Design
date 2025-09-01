@@ -1,0 +1,58 @@
+/* STARTING PHONE SIZE */
+
+@media(max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .rail {
+        display: none;
+    }
+
+    .notes-header {
+        display: none;
+    }
+
+    .two-thirds {
+        display: none;
+    }
+
+    .page{
+        display:none;
+    }
+
+    .header {
+        margin-top:10px;
+        .name,
+        .dropdown-btn {
+            display: none;
+        }
+    }
+}
+
+/* ENDING PHONE SIZE */
+
+/* STARTING TABLET SIZE */
+
+@media(max-width:1024px) {
+    .two-thirds {
+        display: none;
+    }
+
+    .header{
+        width: 100%;
+    }
+
+    .one-third {
+        max-width: none;
+        min-width: none;  
+    }
+}
+
+/* ENDING TABLET SIZE*/
+
+/* STARTING PC SIZE */
+
+@media(min-width:1024) {
+
+}
