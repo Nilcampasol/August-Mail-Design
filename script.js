@@ -37,7 +37,7 @@ document.querySelectorAll('.note-item').forEach(item => {
 
 /* ADD NOTE TO NOTES LIST */
 
-document.getElementById('add-notes-btn').addEventListener('click', function() {
+document.getElementById('add-notes-btn').addEventListener('click', function () {
     const noteHTML = `
     <div class="note-item">
         <div class="note-content">
@@ -65,16 +65,45 @@ document.getElementById('add-notes-btn').addEventListener('click', function() {
     btn.insertAdjacentHTML('beforebegin', noteHTML);
 });
 
-document.querySelectorAll('.note-item').forEach(function(note){
-    note.addEventListener('click', function(){
-        if(window.innerWidth <= 1024){
+/* PHONE HAMBURGUER TO OPEN SIDEBAR MENU */
+
+document.getElementById('open-sidebar-btn').addEventListener('click', function(){
+    document.body.classList.add('show-sidebar');
+});
+
+document.querySelector('.sidebar .close-sidebar').addEventListener('click', function(){
+    document.body.classList.remove('show-sidebar');
+});
+
+/* PHONE AND TABLET FUNCTIONALLITY */
+
+document.querySelectorAll('.note-item').forEach(function (note) {
+    note.addEventListener('click', function () {
+        if (window.innerWidth <= 1024) {
             document.body.classList.add('show-two-thirds');
         }
     });
 });
 
-document.getElementById('close-two-thirds-btn').addEventListener('click', function() {
+/* CLOSE BUTTON */
+
+document.getElementById('close-two-thirds-btn').addEventListener('click', function () {
     document.body.classList.remove('show-two-thirds');
+});
+
+/* HAMBURGUER ICON */
+
+document.getElementById('group-excess-of-length-btn').addEventListener('click', function (e) {
+    e.stopPropagation();
+    const dropdown = document.getElementById('toolbar-dropdown');
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+    const rect = this.getBoundingClientRect();
+    dropdown.style.top = rect.bottom + window.scrollY + 'px';
+    dropdown.style.left = rect.left + window.scrollX + 'px';
+});
+
+document.addEventListener('click', function () {
+    document.getElementById('toolbar-dropdown').style.display = 'none';
 });
 
 /* TASKS FUNCTIONS */
@@ -561,7 +590,7 @@ function initTaskDragAndDrop() {
 
         grip.addEventListener('dragend', function () {
             if (draggedTask) draggedTask.classList.remove('dragging');
-            tasksContainer.classList.remove('dragging-tasks'); 
+            tasksContainer.classList.remove('dragging-tasks');
             draggedTask = null;
         });
     });

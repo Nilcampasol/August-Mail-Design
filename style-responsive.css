@@ -2,7 +2,39 @@
 
 @media(max-width: 768px) {
     .sidebar {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 260px;
+        background: white;
+        z-index: 999;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+        transition: left 0.3s cubic-bezier(.4, 0, .2, 1);
+        display: block;
+
+        .upload-btn {
+            width: 240px;
+            margin-bottom: 24px;
+        }
+
+        .close-sidebar {
+            left: -40px;
+            transition: left 0.3s cubic-bezier(.4, 0, .2, 1);
+            display: block;
+        }
+    }
+
+    .show-sidebar .sidebar {
+        left: 0;
+        display: block;
+    }
+
+    .show-sidebar .close-sidebar {
+        left: 280px;
+    }
+
+    .sidebar .bi-x-lg {
+        display: flex;
     }
 
     .rail {
@@ -15,22 +47,99 @@
 
     .two-thirds {
         display: none;
+        overflow: scroll;
+        padding-bottom: 16px;
+        margin-right: 0px;
     }
 
-    .page{
-        display:none;
+    .actions {
+        margin-right: 0px !important;
+    }
+
+    .page {
+        display: none;
     }
 
     .header {
-        margin-top:10px;
+        margin-top: 10px;
+
         .name,
         .dropdown-btn {
             display: none;
         }
+
+        .search {
+            padding: 0px;
+        }
+
+
+
     }
+
+
+    .toolbar-main {
+        padding: 4px;
+        align-items: center;
+
+        .group-btn {
+            display: flex;
+        }
+
+        .toolbar-btn[title="Favorite"],
+        .toolbar-btn[title="Move"],
+        .toolbar-btn[title="Copy"],
+        .toolbar-btn[title="Copy Plus"],
+        .toolbar-btn[title="Export"],
+        .toolbar-btn[title="Print"],
+        .toolbar-btn[title="Delete"],
+        .toolbar-sep {
+            display: none;
+        }
+
+        .toolbar-btn {
+            font-size: 22px;
+            gap: 12px;
+
+        }
+
+        .people-btn {
+            padding: 0px;
+        }
+    }
+
+    .topbar-main {
+
+        gap: 10px !important;
+
+        .search .bi-search {
+            display: none;
+        }
+
+        input {
+
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid var(--line);
+        }
+    }
+
+    .toolbar-edit {
+        display: none;
+    }
+
+    .editor-container {
+        padding: 18px !important;
+    }
+
 }
 
 /* ENDING PHONE SIZE */
+
+@media(min-width: 769px) {
+    .group-btn {
+        display: none;
+    }
+}
 
 /* STARTING TABLET SIZE */
 
@@ -39,27 +148,32 @@
         display: none;
     }
 
-    .header{
+    .header {
         width: 100%;
     }
 
     .one-third {
         max-width: none;
-        min-width: none;  
+        min-width: none;
     }
+
     .show-two-thirds .rail,
     .show-two-thirds .sidebar,
     .show-two-thirds .one-third,
     .show-two-thirds .notes-header,
-    .show-two-thirds .page {
+    .show-two-thirds .page,
+    .show-two-thirds #open-sidebar-btn,
+    .show-two-thirds #close-two-thirds-btn {
         display: none !important;
     }
-    .show-two-thirds .two-thirds {
+
+    .show-two-thirds .two-thirds,
+    .show-two-thirds #close-two-thirds-btn {
         display: block !important;
     }
 
     #close-two-thirds-btn {
-        display: inline-block !important;
+        display: inline-block;
     }
 }
 
