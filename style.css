@@ -29,6 +29,7 @@ body {
 body {
     display: flex;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    height: 100vh;
 }
 
 /* LATERAL MENU */
@@ -936,6 +937,10 @@ body {
     margin: 0 6px;
 }
 
+#close-two-thirds-btn {
+        display: none !important;
+}
+
 /* CONTENT EDITOR */
 
 .editor-container {
@@ -1007,8 +1012,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
-
 
 .task-row.active .task-drag {
     visibility: visible;
