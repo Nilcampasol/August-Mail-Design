@@ -630,6 +630,7 @@ body {
 .note-title, .note-subtitle{
     overflow: hidden;
     text-overflow: ellipsis;
+    line-clamp: 1;
     -webkit-line-clamp: 1;
     display: -webkit-box;
     -webkit-box-orient: vertical;
