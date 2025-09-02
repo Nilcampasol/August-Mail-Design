@@ -139,6 +139,10 @@
     .group-btn {
         display: none;
     }
+
+    #open-sidebar-btn{
+        display:none;
+    }
 }
 
 /* STARTING TABLET SIZE */
