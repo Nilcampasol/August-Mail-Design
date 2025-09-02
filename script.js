@@ -71,6 +71,10 @@ document.getElementById('open-sidebar-btn').addEventListener('click', function()
     document.body.classList.add('show-sidebar');
 });
 
+document.querySelector('.sidebar-overlay').addEventListener('click', function () {
+    document.body.classList.remove('show-sidebar');
+});
+
 document.querySelector('.sidebar .close-sidebar').addEventListener('click', function(){
     document.body.classList.remove('show-sidebar');
 });
