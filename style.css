@@ -1,3 +1,5 @@
+/* STATIC AND CONSTANTS */
+
 :root {
     --light-blue: #98b7ff;
     --selected: #d7e3ff;
@@ -57,18 +59,16 @@ body {
     place-items: center;
     transition: .15s background ease;
     margin-bottom: 20px;
+
+    i.bi {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        vertical-align: middle;
+        color: var(--blue);
+    }
 }
-
-
-.rail-logo i.bi {
-    font-size: 24px;
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    vertical-align: middle;
-    color: var(--blue);
-}
-
 
 .rail-btn {
     width: 48px;
@@ -80,15 +80,15 @@ body {
     display: grid;
     place-items: center;
     transition: .15s background ease;
-}
 
-.rail-btn i.bi {
+    i.bi {
     font-size: 24px;
     width: 24px;
     height: 24px;
     display: inline-block;
     vertical-align: middle;
     color: var(--blue);
+}
 }
 
 .rail-btn:hover {
@@ -290,7 +290,7 @@ body {
     height: 100%;
 }
 
-.sidebar:first-child{
+.sidebar:first-child {
     gap: 0px;
 }
 
@@ -351,15 +351,15 @@ body {
     border-radius: 8px;
 }
 
-.sidebar .bi-x-lg{
+.sidebar .bi-x-lg {
     font-size: 22px;
-    display:none;
+    display: none;
 }
 
-.close-sidebar{
+.close-sidebar {
     position: absolute;
     right: -50px;
-    top:45%;
+    top: 45%;
     background: rgb(255, 255, 255);
     width: 36px;
     height: 36px;
@@ -367,7 +367,7 @@ body {
     cursor: pointer;
     border: 0;
     padding-left: 7px;
-    padding-top:2px;
+    padding-top: 2px;
     box-shadow: 0 0px 10px rgb(143, 143, 143);
 
 }
@@ -429,7 +429,7 @@ body {
 }
 
 .straight-line {
-    border: 1px solid var(--line);
+    /*border: 1px solid var(--line);*/
 }
 
 .sidebar-separator {
