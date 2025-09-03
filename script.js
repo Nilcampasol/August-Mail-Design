@@ -65,6 +65,36 @@ document.getElementById('add-notes-btn').addEventListener('click', function () {
     btn.insertAdjacentHTML('beforebegin', noteHTML);
 });
 
+/* ADD NOTE FOR TABLET AND PC */
+
+document.getElementById('create-btn').addEventListener('click', function () {
+    const noteHTML = `
+    <div class="note-item">
+        <div class="note-content">
+            <div class="note-title" title="New Note" contenteditable="true">INSERT TEXT</div>
+            <div class="note-subtitle" title="New Subtitle" contenteditable="true">INSERT TEXT</div>
+            <div class="note-meta">
+                <span class="meta-link">
+                    <i class="bi bi-link-45deg meta-icon"></i>
+                    <span contenteditable="true">3</span>
+                </span>
+                <span class="meta-label label-project"><i class="bi bi-tag-fill"></i><span contenteditable="true">Project</span></span>
+            </div>
+            <div class="note-footer">
+                <span class="note-time" contenteditable="true">10:43 AM</span>
+                <div class="-footer-divider"></div>
+                <span class="note-notebook">
+                    <i class="bi bi-journal"></i>
+                    <span contenteditable="true">NoteBook-01</span>
+                </span>
+            </div>
+        </div>
+    </div>
+    `;
+    const notesContainer = document.getElementById('add-notes-btn').parentNode;
+    notesContainer.insertAdjacentHTML('afterbegin', noteHTML);
+});
+
 /* PHONE HAMBURGUER TO OPEN SIDEBAR MENU */
 
 document.getElementById('open-sidebar-btn').addEventListener('click', function(){

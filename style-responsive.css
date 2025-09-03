@@ -30,7 +30,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0, 0, 0, 0.4);
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s;
@@ -161,8 +161,16 @@
         display: none;
     }
 
-    #open-sidebar-btn{
-        display:none;
+    #open-sidebar-btn {
+        display: none;
+    }
+
+    .add-notes-btn {
+        display: none;
+    }
+
+    .notes-list {
+        padding-bottom: 40px;
     }
 }
 
