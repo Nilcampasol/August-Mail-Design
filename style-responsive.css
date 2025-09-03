@@ -172,6 +172,10 @@
     .notes-list {
         padding-bottom: 40px;
     }
+
+    #close-two-thirds-btn {
+        display:none;
+    }
 }
 
 /* STARTING TABLET SIZE */
