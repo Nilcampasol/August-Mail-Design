@@ -63,6 +63,7 @@ document.getElementById('add-notes-btn').addEventListener('click', function () {
     `;
     const btn = document.getElementById('add-notes-btn');
     btn.insertAdjacentHTML('beforebegin', noteHTML);
+    addNoteItemListeners();
 });
 
 /* ADD NOTE FOR TABLET AND PC */
@@ -93,6 +94,7 @@ document.getElementById('create-btn').addEventListener('click', function () {
     `;
     const notesContainer = document.getElementById('add-notes-btn').parentNode;
     notesContainer.insertAdjacentHTML('afterbegin', noteHTML);
+    addNoteItemListeners();
 });
 
 /* PHONE HAMBURGUER TO OPEN SIDEBAR MENU */
@@ -124,6 +126,21 @@ document.querySelectorAll('.note-item').forEach(function (note) {
 document.getElementById('close-two-thirds-btn').addEventListener('click', function () {
     document.body.classList.remove('show-two-thirds');
 });
+
+/* NEW NOTES LISTENERS FOR PHONE TABLET */
+
+function addNoteItemListeners(){
+    document.querySelectorAll('.note-item').forEach(function (note) {
+        if (!note.classList.contains('listener-added')) {
+            note.addEventListener('click', function () {
+                if (window.innerWidth <= 1024) {
+                    document.body.classList.add('show-two-thirds');
+                }
+            });
+            note.classList.add('listener-added');
+        }
+    });
+}
 
 /* HAMBURGUER ICON */
 
@@ -267,6 +284,8 @@ function initAllTaskFeatures() {
     initTaskListeners();
     initTaskDeadline();
     initTaskDragAndDrop();
+    addNoteItemListeners();
+
 }
 
 function initTaskDeadline() {
