@@ -135,7 +135,7 @@
             border: 1px solid var(--line);
         }
 
-       
+
     }
 
     .toolbar-edit {
@@ -144,6 +144,11 @@
 
     .editor-container {
         padding: 18px !important;
+        margin-bottom: 70px !important;
+
+    }
+    .add-notes-btn {
+        margin-bottom: 90px !important;
     }
 
 }
@@ -195,7 +200,7 @@
     .two-thirds {
         position: fixed;
         top: 70px;
-        right: -100vw; 
+        right: -100vw;
         width: 100vw;
         height: calc(100vh-70px);
         background: white;
@@ -208,26 +213,33 @@
     }
 
     .show-two-thirds .two-thirds {
-        right: 0 !important; 
+        right: 0 !important;
         opacity: 1 !important;
         display: block !important;
     }
 
-    .show-two-thirds{
+    .show-two-thirds {
 
         .topbar-main {
             padding-left: 2px;
         }
 
-        #close-two-thirds-btn{
-            padding-right:12px;
+        #close-two-thirds-btn {
+            padding-right: 12px;
         }
 
-        .rail, .sidebar, .one-third, .notes-header, .page, #open-sidebar-btn, #close-two-thirds-btn {
+        .rail,
+        .sidebar,
+        .one-third,
+        .notes-header,
+        .page,
+        #open-sidebar-btn,
+        #close-two-thirds-btn {
             display: none !important;
         }
 
-        .two-thirds, #close-two-thirds-btn {
+        .two-thirds,
+        #close-two-thirds-btn {
             display: block !important;
         }
     }
