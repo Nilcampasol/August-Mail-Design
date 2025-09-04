@@ -428,9 +428,9 @@ body {
     height: 18px;
 }
 
-.straight-line {
-    /*border: 1px solid var(--line);*/
-}
+/*.straight-line {
+    border: 1px solid var(--line);
+}*/
 
 .sidebar-separator {
     height: 16px;
