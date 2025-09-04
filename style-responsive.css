@@ -170,6 +170,10 @@
     #close-two-thirds-btn {
         display: none;
     }
+
+    .close-sidebar {
+        display: none;
+    }
 }
 
 /* STARTING TABLET SIZE */
